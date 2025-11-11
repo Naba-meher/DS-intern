@@ -1,0 +1,6 @@
+print("-1st program-\n \n")
+name = input("Enter your name: \n")
+age = input("Enter your age: \n")
+hobby = input("Enter your hobbies(seperate by comma):\n")
+
+print(f"\n \n --Welcome {name}, so your age is {age} and your hobbies are {hobby}.--")
