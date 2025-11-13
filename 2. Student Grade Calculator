@@ -14,7 +14,7 @@ elif marks >= 60:
     message = "You're getting there! Every step counts keep refining your skills!"
 else:
     grade= "F"
-    message = "This grade doesn’t define you. Your effort, your mindset, and your comeback will. Keep going. "
+    message = "This grade does not define you. Your effort, your mindset, and your comeback will. Keep going. "
   
 print(f"\n📊Your Grade: {grade}")
 print(f"{message}")
