@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = pd.read_csv("sales.csv")
+
+data["Sales"] = data["Quantity"] * data["Price"]
+
+total_sales = data["Sales"].sum()
+
+product_sales = data.groupby("Product")["Sales"].sum()
+best_product = product_sales.idxmax()
+best_product_sales = product_sales.max()
+
+print("Sales Report")
+print("---------------------------")
+print(f"Total Sales: ₹{total_sales}")
+print(f"Best-Selling Product: {best_product} (₹{best_product_sales})")
+print("\nProduct-wise Breakdown:")
+print(product_sales)
