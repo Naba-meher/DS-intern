@@ -1,0 +1,31 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    "Student": ["Alice", "Bob", "Charlie", "David", "Eva"],
+    "Math": [85, 70, 90, 60, 95],
+    "Science": [78, 82, 88, 55, 92],
+    "English": [92, 65, 80, 70, 85],
+    "History": [74, 60, 85, 50, 80]
+}
+
+df = pd.DataFrame(data)
+df["Average"] = df[["Math", "Science", "English", "History"]].mean(axis=1)
+
+plt.figure(figsize =(8,5))
+plt.bar(df["Student"], df["Average"], color="skyblue")
+plt.title("Average Marks per Student")
+plt.xlabel("Student")
+plt.ylabel("Average Marks")
+plt.show()
+
+
+plt.figure(figsize =(8,5))
+for subject in ["Math", "Science", "English", "History"]:
+    plt.plot(df["Student"], df[subject], marker="o", label=subject)
+
+plt.title("Subject-wise Performance Trends")
+plt.xlabel("Student")
+plt.ylabel("Marks")
+plt.legend()
+plt.show()
